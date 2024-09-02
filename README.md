@@ -6,7 +6,7 @@ Projeto da Missão de Aprendizado da profissão Dev Backend JavaScript: MongoDB
   - Conectar o MongoDB Compass ao cluster criado no Cloud Atlas
 
 2. **Operações CRUD no Cloud:**
-  - Realizar operações CRUD no cluster do MongoDB Cloud Atlas através do Compass.
+  - Realizar operações CRUD no cluster do MongoDB Cloud Atlas.
 
 3. **Intrgração com o Node.js:**
  - Modificar a aplicaçao existente para realiar operações CRUD utilizando o banco de dados no MongoDB Cloud Atlas.
