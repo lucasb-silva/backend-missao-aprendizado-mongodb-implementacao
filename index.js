@@ -1,6 +1,8 @@
 const express = require('express')
 const { MongoClient, ObjectId } = require('mongodb')
 
+const dbUser = 'lucasbeserrasilva18'
+const dbPassword = '051Q7uODoTFUC886'
 
 const dbUrl = 'mongodb+srv://' + dbUser + ':' + dbPassword +'@cluster0.zaxp3ht.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 const dbName = 'mongodb-intro-e-implementacao'
@@ -109,17 +111,17 @@ async function main() {
   })
 
   // Endpoint Delete [DELETE] /personagem/:id
-  app.delete('/personagem/:id', function (req, res) {
+  app.delete('/personagem/:id', async function (req, res) {
     // Acessamos o parâmetro de rota
     const id = req.params.id
 
     // Checamos se o item com ID - 1 está na lista
-    if (!lista[id - 1]) {
-      return res.status(404).send('Item não encontrado.')
-    }
+    // if (!lista[id - 1]) {
+    //   return res.status(404).send('Item não encontrado.')
+    // }
 
-    // Remover o item da lista usando o ID - 1
-    delete lista[id - 1]
+    // Remover o item da collection usando o ID
+    await collection.deleteOne({ _id: new ObjectId(id) })
 
     // Enviamos uma mensagem de sucesso
     res.send('Item removido com sucesso: ' + id)
